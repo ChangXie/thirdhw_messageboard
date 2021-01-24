@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <button onclick="instance.get('/json')">get json</button>
+    <button onclick="post_json()">post json</button>
+    <button onclick="instance.get('/set_session')">set_session</button>
+    <button onclick="instance.get('/get_session')">get_session</button>
+    <button onclick="instance.get('/clear_session')">clear_session</button>
+    <script>
+      const baseURL = 'https://zekaio.cn/flask_demo' // 设置为你部署的地址
+
+      const instance = axios.create({
+        baseURL,
+      })
+      instance.interceptors.response.use(
+        (res) => {
+          console.log(res)
+          return Promise.resolve(res)
+        },
+        (err) => {
+          console.error(err)
+          return Promise.reject(err)
+        }
+      )
+
+      function post_json() {
+        instance.post('/json', JSON.stringify({ a: 'b' }), {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+      }
+    </script>
+  </body>
+</html>

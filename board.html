@@ -5,23 +5,7 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content = "ie=chrome">
     <title>留言板</title>
-    <style>
-        *{margin:0;padding:0}
-        ul { list-style: none;}
-        img{display:block;}
-        a{text-decoration: none;color: #555555;}
-
-        header{height: 45px;background: #229fffb6;font-size: 20px;color: white;text-align: center;line-height: 45px;}
-
-        .login{height:43px;display: flex;justify-content:center;align-items: center;
-        font-size:14px;margin:5px}
-        .login p{margin-left: 16px;}
-        .login div{width: 80px;height:30px;background:#f5f5f5;text-align:center;line-height: 30px;border-radius:15px}
-
-        div .ablock {
-            background: #f5f5f5;margin:20px;border-radius: 15px;padding:20px;
-        }
-    </style>
+    <link href="board.css" rel="stylesheet"/>
     <script type="text/javascript" src="lib/vue.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 </head>
@@ -39,10 +23,12 @@
         <ul>
             <li v-for="data in datalist">
                 <div class = "ablock">
+                    <div class = "userdiv">{{data.id}}</div>
                     <div class = "messagediv">{{data.message}}</div>
                     <div class = "timediv">{{data.dt_2}}</div>
+                    <div class ="greatdiv"></div>
+                    
                 </div>
-                
             </li>
         </ul>
     </div>
@@ -53,27 +39,33 @@
 
 
 <script>
+
+    
    var vm = new Vue({
         el:"#box",
         data:{
             datalist:[
-{
-    "id":1,"account_num":123456,"password":"33434","message":"这是第一条留言",
-    "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
-},
-{
-    "id":1,"account_num":123456,"password":"33434","message":"这是第二条留言",
-    "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
-},
-{
-    "id":1,"account_num":123456,"password":"33434","message":"这是第三条留言",
-    "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
-},
-{
-    "id":1,"account_num":123456,"password":"33434","message":"这是第四条留言",
-    "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
-}
-]
+    {
+        "id":"user1","account_num":"1234","password":"33434","message":"这是第一条留言",
+        "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
+    },
+    {
+        "id":"user2","account_num":"12345","password":"33434","message":"这是第二条留言",
+        "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
+    },
+    {
+        "id":"user3","account_num":"123","password":"33434","message":"这是第三条留言",
+        "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
+    },
+    {
+        "id":"user4","account_num":"123456","password":"33434","message":"这是第四条留言",
+        "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
+    }
+    ]
+            
+        },
+        methods:{
+            
         }
     })
 
@@ -86,5 +78,7 @@
     //         "Content-Type":"app"
     //     }
     // })
+
+
 </script>
 </html>

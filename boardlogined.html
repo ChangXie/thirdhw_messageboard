@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content = "ie=chrome">
     <title>留言板</title>
-    <link href="login.css" rel="stylesheet"/>
+    <link href="board.css" rel="stylesheet"/>
     <script type="text/javascript" src="lib/vue.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 </head>
@@ -16,16 +16,8 @@
     <header>
         留言板
     </header>
-    <div class="loginContainer">
-      <div class="idItem">
-        <p>用户名</p>
-        <input class="inputBox" type="text" >
-      </div>
-      <div class="passwordItem">
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;密码</p>
-        <input class="inputBox" type="text" >
-      </div>
-      <button class="loginItem">登录</div>
+    <div>
+      
     </div>
 </body>
 
@@ -33,6 +25,23 @@
 
 
 <script>
+
+    
+   var vm = new Vue({
+        el:"#box",
+        data:{
+        }
+    })
+
+    // fetch("").then(res=>res.json()).then(res=>{console.log(res)})
+    // fetch("").then(res=>res.json()).then(res=>{console.log(res)})
+
+    // fetch("",{
+    //     method:'post',
+    //     headers:{
+    //         "Content-Type":"app"
+    //     }
+    // })
 
 
 </script>

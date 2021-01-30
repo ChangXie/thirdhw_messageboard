@@ -11,29 +11,30 @@
 </head>
 
 <!-- vscode://vscode.github-authentication/did-authenticate?windowid=1&code=4df59ec1eb4aefaee029&state=13d1dcd4-e992-45a8-88ff-af601168a1ff -->
-
 <body>
     <header>
         留言板
     </header>
+
     <section class="login">
         <div><a href="login.html">去登陆</a></div>   
     </section>
+    
     <div id="box">  
         <ul>
             <li v-for="data in datalist">
                 <div class = "ablock">
                     <div class = "userdiv">{{data.id}}</div>
                     <div class = "messagediv">{{data.message}}</div>
-                    <div class = "timediv">{{data.dt_2}}</div>
-                    <div class ="greatdiv"></div>
-                    
+                    <div class = "timediv">发布于{{data.dt_2}} 修改于{{data.dt_1}}</div>
+
                 </div>
             </li>
         </ul>
     </div>
 
 </body>
+
 
 
 
@@ -60,6 +61,14 @@
     {
         "id":"user4","account_num":"123456","password":"33434","message":"这是第四条留言",
         "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
+    },
+    {
+        "id":"user4","account_num":"123456","password":"33434","message":"这是第五条留言",
+        "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
+    },
+    {
+        "id":"user4","account_num":"123456","password":"33434","message":"这是第六条留言",
+        "dt_1":"2020-12-03 19:49:07","dt_2":"2020-12-03 19:49:07"
     }
     ]
             
@@ -68,17 +77,6 @@
             
         }
     })
-
-    // fetch("").then(res=>res.json()).then(res=>{console.log(res)})
-    // fetch("").then(res=>res.json()).then(res=>{console.log(res)})
-
-    // fetch("",{
-    //     method:'post',
-    //     headers:{
-    //         "Content-Type":"app"
-    //     }
-    // })
-
-
+    
 </script>
 </html>
